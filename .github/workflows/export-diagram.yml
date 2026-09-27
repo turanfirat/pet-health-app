@@ -1,0 +1,28 @@
+name: Export draw.io Diagram
+
+on:
+  push:
+    paths:
+      - '**.drawio'
+  workflow_dispatch:
+
+jobs:
+  export-diagram:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: draw.io CLI
+        uses: severgroup-tt/actions-drawio-cli@v1.0.0
+        with:
+          args: --export --format png --output architecture.png architecture.drawio
+
+      - name: Commit exported diagram
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add architecture.png
+          git diff --cached --quiet || git commit -m "ci: auto-export architecture.drawio → architecture.png"
+          git push

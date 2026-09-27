@@ -13,7 +13,9 @@ A full-stack web application for managing pet health center appointments.
 
 ## Architecture
 
-See [architecture.drawio](./architecture.drawio) — open with [draw.io](https://app.diagrams.net).
+![System Architecture](./architecture.png)
+
+> Source file: [architecture.drawio](./architecture.drawio) — edit with [draw.io](https://app.diagrams.net). The PNG above is auto-exported by GitHub Actions on every push.
 
 ## Features
 
