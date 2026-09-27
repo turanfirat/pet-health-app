@@ -17,3 +17,4 @@ target/
 !.mvn/wrapper/
 mvnw
 mvnw.cmd
+src/main/resources/application-local.properties
