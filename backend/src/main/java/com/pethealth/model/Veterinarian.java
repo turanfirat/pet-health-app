@@ -1,7 +1,9 @@
 package com.pethealth.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity
 @Table(name = "veterinarians")
 public class Veterinarian {
